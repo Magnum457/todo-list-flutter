@@ -36,7 +36,7 @@ class TodoListField extends StatelessWidget {
         ),
         isDense: true,
       ),
-      obscureText: true,
+      obscureText: obscureText,
     );
   }
 }
