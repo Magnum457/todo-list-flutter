@@ -4,7 +4,7 @@ import 'package:todo_list_provider/app/repositories/user/user_repository.dart';
 import 'user_service.dart';
 
 class UserServiceImpl implements UserService {
-  UserRepository _userRepository;
+  final UserRepository _userRepository;
 
   UserServiceImpl({required UserRepository userRepository})
       : _userRepository = userRepository;
@@ -17,5 +17,10 @@ class UserServiceImpl implements UserService {
   @override
   Future<User?> login(String email, String password) {
     return _userRepository.login(email, password);
+  }
+
+  @override
+  Future<void> forgotPassword(String email) {
+    return _userRepository.forgotPassword(email);
   }
 }
